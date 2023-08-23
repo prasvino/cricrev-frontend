@@ -1,13 +1,17 @@
 <div fxLayoutAlign="center center" fxFlexFill>
-    <mat-card fxFlex="25">
+    <mat-card fxFlex.gt-sm="25%">
         <mat-toolbar color="primary">WELCOME</mat-toolbar>
             <div fxLayoutAlign="stretch" fxLayout="column">
                 <div style="margin: 5%">
-                    <button style="width: -webkit-fill-available" mat-raised-button type="submit">Register</button>
+                    <button id="register" style="width: -webkit-fill-available" mat-raised-button type="submit" (click)="register()">Register</button>
                 </div>
-                <br>
+                <div fxLayoutAlign="center">
+                    <span> or </span>
+                </div>
                 <div style="margin: 5%">            
-                    <button style="width: -webkit-fill-available" mat-raised-button type="submit">Login</button>
+                    <button style="width: -webkit-fill-available" mat-raised-button type="submit" (click)="login()">
+                        Login
+                    </button>
                 </div>
             </div>
     </mat-card>
