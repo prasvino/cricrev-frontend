@@ -1,23 +1,36 @@
 <div fxLayoutAlign="center center" fxFlexFill>
     <form>
-        <h4>Winning Team</h4>
+        <h4><b>Winning Team</b></h4>
         <mat-radio-group aria-label="Select One">
             <mat-radio-button value="1">TEAM 1</mat-radio-button>
             <mat-radio-button value="2">TEAM 2</mat-radio-button>
         </mat-radio-group>
-        <h4>Player to score the maximum number of runs</h4>
-        <!--
+        <br>
+        <br>
+        <h4><b>Highest Run Score</b></h4>
+        
             <mat-form-field>
-            <mat-select [formControl]="playerControl" placeholder="Select a player">
-              <mat-option *ngFor="let player of players" [value]="player">
-                {{ player }}
-              </mat-option>
-            </mat-select>
+              <mat-select [(value)]="selectedBatsmen">
+                <mat-option *ngFor="let player of players" [value]="player.name">
+                  {{ player.name }}
+                </mat-option>
+              </mat-select>
           </mat-form-field>
-        -->
         
-        
-        <h4>Player to pick the maximum number of wickets</h4>
+        <h4><b>Highest wicket taker</b></h4>
+
+        <mat-form-field>
+          <mat-select [(value)]="selectedBowler">
+            <mat-option *ngFor="let player of players" [value]="player.name">
+              {{ player.name }}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+      <h4></h4>
+      <mat-card-actions align="end">
+        <button mat-raised-button type="submit" color="primary">Submit</button>
+      </mat-card-actions>
+      
 
     </form>
 </div>

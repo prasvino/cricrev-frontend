@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-quiz',
@@ -8,11 +8,18 @@ import { FormControl } from '@angular/forms';
 })
 export class QuizComponent implements OnInit{
 
-  playerControl!: FormControl;
-  players = ['Kohli', 'Butler', 'Stokes', 'Rohit', 'Bumrah', 'Rashid Khan', 'Hasaranga'];
+  url: string = '../../assets/static/players.json';
+  players: any;
+  selectedBatsmen = '';
+  selectedBowler = '';
 
-
+  constructor(private http: HttpClient) {}
+  
   ngOnInit() {
-    this.playerControl = new FormControl(this.players[0]);
+    this.http.get(this.url).subscribe(res => {
+      this.players = res;
+      console.log('players... ', this.players);
+    });
+
   }
 }
