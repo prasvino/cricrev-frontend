@@ -17,7 +17,9 @@ import { HomeComponent } from './home/home.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './commonservice/authguard';
+import { AuthService } from './commonservice/authservice';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +40,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatToolbarModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
+
+
 })
 export class AppModule { }
