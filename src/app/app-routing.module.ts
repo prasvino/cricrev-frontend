@@ -7,7 +7,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { AuthGuard } from './commonservice/authguard';
 
 const routes: Routes = [
-  {path:'', component:QuizComponent,canActivate:[AuthGuard]},
+  {path:'', component:QuizComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegistrationComponent}
 ];

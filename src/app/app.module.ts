@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './commonservice/authguard';
 import { AuthService } from './commonservice/authservice';
+import { JwtModule } from '@auth0/angular-jwt';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,14 @@ import { AuthService } from './commonservice/authservice';
     MatToolbarModule,
     MatRadioModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => localStorage.getItem('jwt_token'), // Function to get the token from local storage
+        allowedDomains: ['example.com'], // Replace with your domain
+        disallowedRoutes: ['example.com/api/auth'], // Replace with your API routes
+      },
+    }),
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
