@@ -1,31 +1,43 @@
-<div fxLayoutAlign="center center" fxFlexFill>
-    <mat-card fxFlex="25%">
-        <mat-toolbar color="primary">REGISTRATION</mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column">
-            <mat-form-field>
-                <input matInput placeholder="Username">
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Firstname">
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Lastname">
-            </mat-form-field>
-            <!-- change to datepicker, import matdatepicker in app.module-->
-            <mat-form-field>
-                <input matInput placeholder="Dateofbirth">
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Email">
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput type="password" placeholder="Password">
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput type="password" placeholder="ConfirmPassword">
-            </mat-form-field>
-
-            <button mat-raised-button type="submit">Submit</button>
-          </form>
-    </mat-card>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 form">
+            <div class="card">
+                <div class="card-header bg-primary text-white">REGISTRATION</div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname">Firstname</label>
+                            <input type="text" class="form-control" id="firstname">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Lastname</label>
+                            <input type="text" class="form-control" id="lastname">
+                        </div>
+                        <!-- Use a datepicker library of your choice -->
+                        <div class="form-group">
+                            <label for="dateofbirth">Date of Birth</label>
+                            <input type="text" class="form-control" id="dateofbirth">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
