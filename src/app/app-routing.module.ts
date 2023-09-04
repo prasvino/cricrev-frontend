@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { AuthGuard } from './commonservice/authguard';
 
 const routes: Routes = [
   {path:'', component:QuizComponent},

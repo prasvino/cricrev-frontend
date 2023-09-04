@@ -1,4 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/../assets/static/Cric2.jpg'); /* Update the path as needed */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+  }
+  
+  .form {
+    background-color: rgb(245, 241, 241);
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+  }

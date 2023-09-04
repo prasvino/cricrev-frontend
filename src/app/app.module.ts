@@ -17,7 +17,10 @@ import { HomeComponent } from './home/home.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './commonservice/authguard';
+import { AuthService } from './commonservice/authservice';
+import { JwtModule } from '@auth0/angular-jwt';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +41,19 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatToolbarModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => localStorage.getItem('jwt_token'), // Function to get the token from local storage
+        allowedDomains: ['example.com'], // Replace with your domain
+        disallowedRoutes: ['example.com/api/auth'], // Replace with your API routes
+      },
+    }),
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
+
+
 })
 export class AppModule { }
