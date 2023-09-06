@@ -14,9 +14,9 @@ export class AuthService {
     private jwtHelper: JwtHelperService,private apiService:ApiService
   ) {}
 
-  login(username: string, password: string) {
+  login(usernameOrEmail: string, password: string) {
    // Send a POST request to your backend to authenticate
-   return this.apiService.post<any>('login', { username, password }).pipe(
+   return this.apiService.post<any>('signin', { usernameOrEmail, password }).pipe(
     map((response: any) => {
       // Assuming your server returns a 'token' field in the response
       if (response && response.token) {
