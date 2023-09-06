@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:8080/api/'; // Replace with your API URL
+  private baseUrl = 'http://localhost:8080/api/auth/'; // Replace with your API URL
 
   constructor(private http: HttpClient) {}
 
@@ -14,24 +14,25 @@ export class ApiService {
     // Add headers or authentication tokens if needed
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
+
     });
 
     return { headers };
   }
 
   get<T>(endpoint: string): Observable<T> {
-    return this.http.get<T>(`${this.baseUrl}/${endpoint}`, this.getRequestOptions());
+    return this.http.get<T>(`${this.baseUrl}${endpoint}`, this.getRequestOptions());
   }
 
   post<T>(endpoint: string, data: any): Observable<T> {
-    return this.http.post<T>(`${this.baseUrl}/${endpoint}`, data, this.getRequestOptions());
+    return this.http.post<T>(`${this.baseUrl}${endpoint}`, data, this.getRequestOptions());
   }
 
   put<T>(endpoint: string, data: any): Observable<T> {
-    return this.http.put<T>(`${this.baseUrl}/${endpoint}`, data, this.getRequestOptions());
+    return this.http.put<T>(`${this.baseUrl}${endpoint}`, data, this.getRequestOptions());
   }
 
   delete<T>(endpoint: string): Observable<T> {
-    return this.http.delete<T>(`${this.baseUrl}/${endpoint}`, this.getRequestOptions());
+    return this.http.delete<T>(`${this.baseUrl}${endpoint}`, this.getRequestOptions());
   }
 }
